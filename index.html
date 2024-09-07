@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            font-family: Arial;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            height: 60px;
+            background-color: #0F1111;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .nav-logo {
+            height: 50px;
+            width: 100px;
+        }
+
+        .logo {
+            background-image: url("https://www.logo.wine/a/logo/Amazon_(company)/Amazon_(company)-Logo.wine.svg");
+            background-color: white;
+            background-size: cover;
+            height: 50px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .border {
+            border: 1.5px solid transparent;
+        }
+
+        .border:hover {
+            border: 2px solid white;
+        }
+
+        .add-first {
+            color: #cccccc;
+            font-size: 0.85rem;
+            margin-left: 15px;
+        }
+
+        .add-second {
+            font-size: 1rem;
+            margin-left: 3px;
+        }
+
+        .add-icon {
+            display: flex;
+            border-top-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .nav-search-border {
+            display: flex;
+            align-items: left;
+            position: relative;
+            margin-left: 30px;
+        }
+
+        .nav-search-border:hover {
+            border: 2px solid orange;
+        }
+
+        .search-select {
+            background-color: #f3f3f3;
+            width: 50px;
+            text-align: center;
+        }
+
+        .search-input {
+            width: 450px;
+            font-size: 0.5rem;
+            height: 50px;
+        }
+
+        .search-input::placeholder {
+            font-size: 16px;
+        }
+
+        .search-icon {
+            width: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            background-color: #c4990ce2;
+            cursor: pointer;
+        }
+
+        .panel-deals {
+            cursor: pointer;
+        }
+
+        .nav-return-border1 {
+            cursor: pointer;
+        }
+
+        .nav-sign {
+            padding-left: 20px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .nav-cart-border {
+            margin-left: 10px;
+            display: flex;
+            cursor: pointer;
+        }
+
+        .nav-cart-border i {
+            padding-left: 20px;
+        }
+
+        .nav-cart {
+            font-size: 30px;
+        }
+
+        .nav-cart {
+            font-size: 0.5rem;
+            font-weight: 700;
+        }
+
+        span {
+            font-size: 0.7rem;
+        }
+
+        .nav-second {
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .panel {
+            height: 40px;
+            background-color: #222f3d;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .panel i {
+            margin-top: 10px;
+            font-size: 20px;
+            left: 10px;
+            position: relative;
+        }
+
+        .nav-cart-border1 {
+            padding-left: 10px;
+        }
+
+        .panel-ops p {
+            display: inline;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .panel-p {
+            color: red;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .panel-ops {
+            width: 70%;
+            color: white;
+            align-items: center;
+            display: inline;
+        }
+
+        .img1 {
+            transition: 0.7s;
+        }
+
+        .img1:hover {
+            transform: scale(1.1);
+        }
+
+        .hero-section {
+            display: flex;
+            background-size: cover;
+            height: 350px;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: rgba(8, 0, 255, 0.311);
+            text-decoration: underline;
+        }
+
+        #pic {
+            width: 100%;
+        }
+
+        .panel-deals {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .hero-msg {
+            background-color: white;
+            color: black;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            bottom: 25px;
+            width: 80%;
+            margin-bottom: 25px;
+        }
+
+        .shop-section {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .box {
+            height: 350px;
+            width: 23%;
+            background-color: white;
+            padding: 20px 0px 15px;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+
+        #text {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #boom {
+            width: 20rem;
+            padding-left: 5%;
+            height: 250px;
+            border-radius: 50px;
+        }
+
+        button {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: bisque;
+            color: black;
+        }
+
+        .hero-msg img {
+            height: 300px;
+            position: absolute;
+            top: 20%;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+                <div class="logo"></div>
+            </div>
+            <div class="nav-address border">
+                <p class="add-first">Deliver to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-second">India</p>
+                </div>
+            </div>
+
+            <div class="nav-search-border">
+                <select class="search-select">
+                    <option>All</option>
+                </select>
+                <input placeholder="Search Amazon" class="search-input">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+            <div class="nav-sign">
+                <p><span>Hello, sign-in</span></p>
+                <p>Account & Lists</p>
+            </div>
+
+            <div class="nav-cart-border">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart
+            </div>
+
+            <div class="nav-return-border1">
+                <p><span>Returns</span></p>
+            </div>
+        </div>
+
+        <div class="panel">
+            <i style="cursor: pointer;" class="fa-solid fa-bars"></i>
+            <p class="panel-p">All</p>
+
+            <div class="panel-ops">
+                <p>Today's Deals</p>
+                <p>Customer Service</p>
+                <p>Registry</p>
+                <p>Gift Cards</p>
+                <p>Sell</p>
+            </div>
+            <div class="panel-deals">
+                Shops deals in Electronics
+            </div>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <div class="hero-msg">
+            <img src="https://th.bing.com/th/id/OIP.R1oEIRSGYF8kfif0rzw2RQHaEK?w=1024&h=576&rs=1&pid=ImgDetMain" alt="Hero Image">
+        </div>
+    </div>
+
+    <div class="shop-section">
+        <div class="box1 box">
+            <h2>Health & Personal Care</h2>
+            <div class="img1">
+                <img src="https://static.vecteezy.com/system/resources/previews/016/544/580/non_2x/daily-hygiene-personal-health-care-product-poster-vector.jpg" alt="Health & Personal Care" id="boom">
+            </div>
+            <a href="#para"><p>See More</p></a>
+        </div>
+        <div class="box2 box">
+            <h2>Grooming</h2>
+            <div class="img1">
+                <img src="https://images.pexels.com/photos/8467962/pexels-photo-8467962.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Grooming" id="boom">
+            </div>
+            <a href="#para"><p>See More</p></a>
+        </div>
+
+        <div class="box3 box">
+            <h2>Furniture</h2>
+            <div class="img1">
+                <img src="https://th.bing.com/th/id/OIP.gWQnIAdz6eW1JVv4hf39sAAAAA?rs=1&pid=ImgDetMain" alt="Furniture" id="boom">
+            </div>
+            <a href="#para"><p>See More</p></a>
+        </div>
+        <div class="box4 box">
+            <h2>Mobiles Accessories</h2>
+            <div class="img1">
+                <img src="https://images.creativemarket.com/0.1.0/ps/2608506/1300/975/m1/fpnw/wm0/2-.jpg?1493312609&s=a863c08ce4856ba20d1e2fbec7136312" alt="Mobiles Accessories" id="boom">
+            </div>
+            <a href="#para"><p>See More</p></a>
+        </div>
+    </div>
+
+    <div class="shop-section">
+        <div class="box1 box">
+            <h2>Beauty & Products</h2>
+            <div class="img1">
+                <img src="https://static.vecteezy.com/system/resources/previews/000/403/514/original/pink-beauty-store-logo-cosmetics-vector.jpg" alt="Beauty & Products" id="boom">
+            </div>
+            <a href="#para"><p>See More</p></a>
+        </div>
+        <div class="box2 box">
+            <h2>Pets & Dogs</h2>
+            <div class="img1">
+                <img src="https://image.freepik.com/free-vector/pet-care-logo-mascot-template_190190-163.jpg" alt="Pets & Dogs" id="boom">
+            </div>
+            <a href="#para"><p>See More</p></a>
+        </div>
+
+        <div class="box3 box">
+            <h2>Kids & Toys</h2>
+            <div class="img1">
+                <img src="https://th.bing.com/th/id/OIP.JxsSpJoVdVcWyfmHx-cXsAAAAA?rs=1&pid=ImgDetMain" alt="Kids & Toys" id="boom">
+            </div>
+            <a href="#para"><p>See More</p></a>
+        </div>
+        <div class="box4 box">
+            <h2>Women's Wear</h2>
+            <div class="img1">
+                <img src="https://static.vecteezy.com/system/resources/previews/026/684/084/non_2x/women-s-clothing-logo-template-with-simple-style-free-vector.jpg" alt="Women's Wear" id="boom">
+            </div>
+            <a href="#para"><p>See More</p></a>
+        </div>
+    </div>
+</body>
+</html>
